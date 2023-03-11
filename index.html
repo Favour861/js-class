@@ -6,37 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SETTIMEOUT AND SETINTERVAL</title>
 </head>
+
 <body>
     <span id="dateDisplay"></span>
     <h1 id="counterText">0</h1>
     <button id="countBtn">Increase Count</button>
     <button id="stopBtn">Stop Count</button>
 
-
-
-
     <script>
         
         document.getElementById('countBtn').addEventListener('click', count)
-
+    
         var countInterval;
-
+    
         function count(){
             // alert("HELLO, GOOD AFTERNOON");
-
+    
             countInterval = setInterval(() => {
                 let counter = Number(document.getElementById('counterText').innerHTML);
                 counter += 1;
                 document.getElementById('counterText').innerHTML = counter;
             }, 1) // miliseconds
         }
-
+    
         const stopCount = () => {
             clearInterval(countInterval);
         }
         
         document.getElementById('stopBtn').addEventListener('click', stopCount)
-        
+    
         const displayDate = () => {
             setInterval(()=>{
                 let date = new Date();
@@ -44,9 +42,9 @@
                 console.log(date);
             },1000)
         }
-
+    
         displayDate();
-
+    
     </script>
 </body>
 </html>
